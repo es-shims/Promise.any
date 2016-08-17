@@ -1,8 +1,22 @@
 {
-  "name": "promise-any",
+  "name": "promise.any",
   "version": "0.1.0",
-  "description": "returns first successful promise. As in Promise.any() which is not part of the ES6 spec",
-  "main": "index.js",
+  "description": "Return first successful promise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sadorlovsky/promise-any.git"
+  },
+  "homepage": "https://github.com/sadorlovsky/promise-any",
+  "bugs": {
+    "url": "https://github.com/sadorlovsky/promise-any/issues",
+    "email": "sadorlovsky@gmail.com"
+  },
+  "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "scripts": {
     "lint": "eslint src test",
     "prebuild": "rimraf lib",
@@ -11,27 +25,18 @@
     "test": "NODE_ENV=test nyc --check-coverage --lines 100 ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "precommit": "lint-staged",
-    "prepush": "npm run lint && npm run test"
+    "prepush": "npm run lint && npm run test",
+    "prepublish": "npm run lint && npm run test && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/m0ppers/promise-any.git"
-  },
-  "keywords": [
-    "promise",
-    "es6",
-    "any",
-    "resolve"
+  "files": [
+    "lib"
   ],
-  "author": "Andreas Streichardt <andreas.streichardt@gmail.com>",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/m0ppers/promise-any/issues"
-  },
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "homepage": "https://github.com/m0ppers/promise-any#readme",
+  "keywords": [
+    "bluebird",
+    "native",
+    "promise",
+    "any"
+  ],
   "devDependencies": {
     "@sadorlovsky/eslint-config": "^0.12.0",
     "ava": "^0.16.0",
