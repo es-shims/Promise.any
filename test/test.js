@@ -3,7 +3,7 @@ import any from '../src'
 
 test('handle empty array', t => {
   const promises = []
-  any(promises).catch(reasons => {
+  return any(promises).catch(reasons => {
     t.deepEqual(reasons, [])
   })
 })
@@ -50,7 +50,7 @@ test('handle [failure, failure]', t => {
     Promise.reject(1),
     Promise.reject(2)
   ]
-  any(promises).catch(reasons => {
+  return any(promises).catch(reasons => {
     t.deepEqual(reasons, [1, 2])
   })
 })
