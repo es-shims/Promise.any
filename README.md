@@ -33,6 +33,10 @@ any([
 
 This package is the same, but with `node >= 4` support.
 
+### Also
+
+I'd rather take this one [sindresorhus/p-any](https://github.com/m0ppers/sindresorhus/p-any) :unicorn:
+
 ## License
 
 MIT © [Zach Orlovsky](https://orlovsky.rocks)
