@@ -12,5 +12,16 @@
 		"new-cap": [2, { "capIsNewExceptions": ["GetIntrinsic", "PromiseResolve", "Type"] }],
 		"no-magic-numbers": 0,
 		"sort-keys": 0,
-	}
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"max-lines-per-function": 0,
+				"max-params": 0,
+				"no-invalid-this": 0,
+			},
+		},
+	],
 }
