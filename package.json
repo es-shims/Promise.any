@@ -1,0 +1,36 @@
+{
+	"name": "promise.any",
+	"version": "0.1.1",
+	"description": "ES Proposal spec-compliant shim for Promise.any",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/es-shims/Promise.any.git"
+	},
+	"keywords": [
+		"Promise",
+		"promises",
+		"any",
+		"settled",
+		"fulfilled",
+		"resolved",
+		"rejected",
+		"allsettled",
+		"resolve",
+		"race",
+		"promise.any",
+		"shim",
+		"polyfill",
+		"es-shim",
+		"API"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/es-shims/Promise.any/issues"
+	},
+	"homepage": "https://github.com/es-shims/Promise.any#readme"
+}
