@@ -4,6 +4,8 @@
 	"description": "ES Proposal spec-compliant shim for Promise.any",
 	"main": "index.js",
 	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -32,5 +34,9 @@
 	"bugs": {
 		"url": "https://github.com/es-shims/Promise.any/issues"
 	},
-	"homepage": "https://github.com/es-shims/Promise.any#readme"
+	"homepage": "https://github.com/es-shims/Promise.any#readme",
+	"devDependencies": {
+		"@ljharb/eslint-config": "^14.0.2",
+		"eslint": "^6.3.0"
+	}
 }
