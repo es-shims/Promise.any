@@ -43,6 +43,12 @@ Promise.any([rejected, alsoRejected]).catch(function (results) {
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
 
+## Pre-1.0 versions
+
+The `promise.any` package was released as now-deprecated v0.1.0 and v0.1.1, as a fork of https://github.com/m0ppers/promise-any.
+
+Thanks to @sadorlovsky for donating the repo and the `promise.any` npm package!
+
 [package-url]: https://npmjs.com/package/promise.any
 [npm-version-svg]: http://versionbadg.es/es-shims/Promise.any.svg
 [travis-svg]: https://travis-ci.org/es-shims/Promise.any.svg
