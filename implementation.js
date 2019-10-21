@@ -4,6 +4,7 @@ var requirePromise = require('./requirePromise');
 
 requirePromise();
 
+var AggregateError = require('es-aggregate-error/polyfill')();
 var ES = require('es-abstract/es2019');
 var callBound = require('es-abstract/helpers/callBound');
 
@@ -29,5 +30,10 @@ module.exports = function any(iterable) {
 		} catch (e) {
 			return e;
 		}
-	})).then(thrower, identity);
+	})).then(
+		function (errors) {
+			throw new AggregateError(errors, 'Every promise rejected');
+		},
+		identity
+	);
 };

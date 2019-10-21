@@ -1,5 +1,7 @@
 'use strict';
 
+var AggregateError = require('es-aggregate-error/polyfill')();
+
 var assertArray = function (t, value, length, assertType) {
 	t.ok(Array.isArray(value), 'value is an array');
 	t.equal(value.length, length, 'length is ' + length);
@@ -22,6 +24,17 @@ module.exports = function (any, t) {
 	var b = {};
 	var c = {};
 
+	t.test('empty iterable', function (st) {
+		st.plan(2);
+		any([]).then(
+			function () { st.fail(); },
+			function (error) {
+				st.equal(error instanceof AggregateError, true, 'is an AggregateError');
+				st.deepEqual(error.errors, []);
+			}
+		);
+	});
+
 	t.test('no promise values', function (st) {
 		st.plan(1);
 		any([a, b, c]).then(function (result) {
@@ -41,14 +54,17 @@ module.exports = function (any, t) {
 	});
 
 	t.test('all rejected', function (st) {
-		st.plan(1);
+		st.plan(2);
 		any([
 			Promise.reject(a),
 			Promise.reject(b),
 			Promise.reject(c)
 		]).then(
 			function () { st.fail(); },
-			function (results) { st.deepEqual(results, [a, b, c]); }
+			function (error) {
+				st.equal(error instanceof AggregateError, true, 'is an AggregateError');
+				st.deepEqual(error.errors, [a, b, c]);
+			}
 		);
 	});
 
@@ -72,14 +88,15 @@ module.exports = function (any, t) {
 	});
 
 	t.test('poisoned .then', function (st) {
-		st.plan(1);
+		st.plan(2);
 		var poison = new EvalError();
 		var promise = new Promise(function () {});
 		promise.then = function () { throw poison; };
 		any([promise]).then(function () {
 			st.fail('should not reach here');
-		}, function (reasons) {
-			st.deepEqual(reasons, [poison], 'rejection showed up as expected');
+		}, function (error) {
+			st.equal(error instanceof AggregateError, true, 'error is an AggregateError');
+			st.deepEqual(error.errors, [poison], 'rejection showed up as expected');
 		});
 	});
 
