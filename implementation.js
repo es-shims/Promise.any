@@ -4,12 +4,11 @@ var requirePromise = require('./requirePromise');
 
 requirePromise();
 
-var ES = require('es-abstract/es2018');
-var GetIntrinsic = require('es-abstract/GetIntrinsic');
-var bind = require('function-bind');
+var ES = require('es-abstract/es2019');
+var callBound = require('es-abstract/helpers/callBound');
 
-var all = bind.call(Function.call, GetIntrinsic('%Promise_all%'));
-var reject = bind.call(Function.call, GetIntrinsic('%Promise_reject%'));
+var all = callBound('Promise.all');
+var reject = callBound('Promise.reject');
 
 var identity = function (x) {
 	return x;
