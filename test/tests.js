@@ -16,9 +16,6 @@ module.exports = function (any, t) {
 	if (typeof Promise !== 'function') {
 		return t.skip('No global Promise detected');
 	}
-	if (typeof Array.from !== 'function') {
-		return t.skip('No global Array.from detected');
-	}
 
 	var a = {};
 	var b = {};

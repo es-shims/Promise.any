@@ -7,6 +7,8 @@ requirePromise();
 var AggregateError = require('es-aggregate-error/polyfill')();
 var ES = require('es-abstract/es2019');
 var callBound = require('es-abstract/helpers/callBound');
+var iterate = require('iterate-value');
+var map = require('array.prototype.map');
 
 var all = callBound('Promise.all');
 var reject = callBound('Promise.reject');
@@ -23,7 +25,7 @@ module.exports = function any(iterable) {
 	var thrower = function (value) {
 		return reject(C, value);
 	};
-	return all(C, Array.from(iterable, function (item) {
+	return all(C, map(iterate(iterable), function (item) {
 		var itemPromise = ES.PromiseResolve(C, item);
 		try {
 			return itemPromise.then(thrower, identity);
