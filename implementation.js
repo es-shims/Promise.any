@@ -5,7 +5,8 @@ var requirePromise = require('./requirePromise');
 requirePromise();
 
 var AggregateError = require('es-aggregate-error/polyfill')();
-var ES = require('es-abstract/es2019');
+var PromiseResolve = require('es-abstract/2019/PromiseResolve');
+var Type = require('es-abstract/2019/Type');
 var callBound = require('es-abstract/helpers/callBound');
 var iterate = require('iterate-value');
 var map = require('array.prototype.map');
@@ -19,14 +20,14 @@ var identity = function (x) {
 
 module.exports = function any(iterable) {
 	var C = this;
-	if (ES.Type(C) !== 'Object') {
+	if (Type(C) !== 'Object') {
 		throw new TypeError('`this` value must be an object');
 	}
 	var thrower = function (value) {
 		return reject(C, value);
 	};
 	return all(C, map(iterate(iterable), function (item) {
-		var itemPromise = ES.PromiseResolve(C, item);
+		var itemPromise = PromiseResolve(C, item);
 		try {
 			return itemPromise.then(thrower, identity);
 		} catch (e) {
