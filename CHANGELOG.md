@@ -1,3 +1,20 @@
+v2.0.1 / 2019-12-14
+=================
+  * [Fix] no longer require `Array.from`; works in older envs
+  * [Refactor] use split-up `es-abstract` (39% bundle size decrease)
+  * [Deps] update `es-abstract`, `es-aggregate-error`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `safe-publish-latest`
+  * [meta] add `funding` field
+  * [Tests] run `evalmd` in `postlint`
+  * [Tests] use shared travis-ci configs
+  * [actions] add automatic rebasing / merge commit blocking
+
+v2.0.0 / 2019-10-21
+=================
+  * [Breaking] `Promise.any` rejects with an `AggregateError`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `functions-have-names`
+  * [Deps] update `es-abstract`
+
 v1.0.0 / 2019-03-27
 =================
   * Initial spec-compliant release.
