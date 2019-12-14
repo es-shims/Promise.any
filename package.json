@@ -13,6 +13,7 @@
 	"scripts": {
 		"prepublish": "safe-publish-latest",
 		"lint": "eslint .",
+		"postlint": "evalmd README.md",
 		"pretest": "npm run lint && es-shim-api --bound",
 		"test": "npm run --silent tests-only",
 		"posttest": "npx aud",
@@ -67,6 +68,7 @@
 		"@ljharb/eslint-config": "^15.0.2",
 		"es6-shim": "^0.35.5",
 		"eslint": "^6.7.2",
+		"evalmd": "0.0.19",
 		"functions-have-names": "^1.2.0",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^4.11.0"
