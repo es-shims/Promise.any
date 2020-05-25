@@ -16,7 +16,7 @@
 		"postlint": "evalmd README.md",
 		"pretest": "npm run lint && es-shim-api --bound",
 		"test": "npm run --silent tests-only",
-		"posttest": "npx aud",
+		"posttest": "npx aud --production",
 		"tests-only": "npm run --silent test:shimmed && npm run --silent test:module && npm run --silent tests:es5",
 		"tests:es5": "npm run --silent test:promise-shimmed",
 		"test:shimmed": "node test/shimmed",
