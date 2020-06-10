@@ -25,8 +25,9 @@ any([resolved, rejected, alsoRejected]).then(function (result) {
 	assert.equal(result, 42);
 });
 
-any([rejected, alsoRejected]).catch(function (results) {
-	assert.deepEqual(results, [-1, Infinity]);
+any([rejected, alsoRejected]).catch(function (error) {
+	assert.ok(error instanceof AggregateError);
+	assert.deepEqual(error.errors, [-1, Infinity]);
 });
 
 any.shim(); // will be a no-op if not needed
@@ -35,8 +36,9 @@ Promise.any([resolved, rejected, alsoRejected]).then(function (result) {
 	assert.equal(result, 42);
 });
 
-Promise.any([rejected, alsoRejected]).catch(function (results) {
-	assert.deepEqual(results, [-1, Infinity]);
+Promise.any([rejected, alsoRejected]).catch(function (error) {
+	assert.ok(error instanceof AggregateError);
+	assert.deepEqual(error.errors, [-1, Infinity]);
 });
 ```
 
