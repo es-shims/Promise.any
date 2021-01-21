@@ -1,7 +1,6 @@
 'use strict';
 
-var any = require('../');
-any.shim();
+require('../auto');
 
 var test = require('tape');
 

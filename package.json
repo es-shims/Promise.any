@@ -15,15 +15,11 @@
 		"lint": "eslint .",
 		"postlint": "evalmd README.md",
 		"pretest": "npm run lint && es-shim-api --bound",
-		"test": "npm run --silent tests-only",
+		"test": "npm run tests-only && npm run test:promise-shimmed",
 		"posttest": "npx aud --production",
-		"tests-only": "npm run --silent test:shimmed && npm run --silent test:module && npm run --silent tests:es5",
-		"tests:es5": "npm run --silent test:promise-shimmed",
-		"test:shimmed": "node test/shimmed",
-		"test:module": "node test",
-		"test:promise-shimmed": "node test/promise-shimmed",
-		"test:native": "node test/native",
-		"coverage": "covert test/*.js"
+		"tests-only": "nyc tape test/{implementation,index,shimmed}.js",
+		"test:promise-shimmed": "nyc node test/promise-shimmed",
+		"test:native": "node test/native"
 	},
 	"repository": {
 		"type": "git",
@@ -72,6 +68,7 @@
 		"eslint": "^7.2.0",
 		"evalmd": "^0.0.19",
 		"functions-have-names": "^1.2.1",
+		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.0.1"
 	},
