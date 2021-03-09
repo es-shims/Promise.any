@@ -1,3 +1,13 @@
+v2.0.2 / 2020-03-09
+=================
+  * [Fix] avoid "Promise.all called on non-object" error
+  * [Docs] fix rejection examples
+  * [Deps] update `array.prototype.map`, `es-abstract`, `es-aggregate-error`, `iterate-value`
+  * [meta] only run `aud` on prod deps
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`, `functions-have-names`; add `aud`
+  * [actions] add "Allow Edits" workflow
+  * [actions] switch Automatic Rebase workflow to `pull_request_target` event
+
 v2.0.1 / 2019-12-14
 =================
   * [Fix] no longer require `Array.from`; works in older envs
