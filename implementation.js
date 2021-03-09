@@ -5,14 +5,15 @@ var requirePromise = require('./requirePromise');
 requirePromise();
 
 var AggregateError = require('es-aggregate-error/polyfill')();
-var PromiseResolve = require('es-abstract/2019/PromiseResolve');
-var Type = require('es-abstract/2019/Type');
-var callBound = require('es-abstract/helpers/callBound');
+var PromiseResolve = require('es-abstract/2020/PromiseResolve');
+var Type = require('es-abstract/2020/Type');
+var callBind = require('call-bind');
+var GetIntrinsic = require('get-intrinsic');
 var iterate = require('iterate-value');
 var map = require('array.prototype.map');
 
-var all = callBound('Promise.all');
-var reject = callBound('Promise.reject');
+var all = callBind(GetIntrinsic('%Promise.all%'));
+var reject = callBind(GetIntrinsic('%Promise.reject%'));
 
 var identity = function (x) {
 	return x;
