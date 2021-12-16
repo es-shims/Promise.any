@@ -11,10 +11,12 @@
 	"description": "ES Proposal spec-compliant shim for Promise.any",
 	"main": "index.js",
 	"scripts": {
-		"prepublish": "safe-publish-latest",
-		"lint": "eslint .",
-		"postlint": "evalmd README.md",
-		"pretest": "npm run lint && es-shim-api --bound",
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"prelint": "evalmd README.md",
+		"lint": "eslint --ext=js,mjs .",
+		"postlint": "es-shim-api --bound",
+		"pretest": "npm run lint",
 		"test": "npm run tests-only && npm run test:promise-shimmed",
 		"posttest": "npx aud --production",
 		"tests-only": "nyc tape test/{implementation,index,shimmed}.js",
@@ -61,16 +63,16 @@
 		"iterate-value": "^1.0.2"
 	},
 	"devDependencies": {
-		"@es-shims/api": "^2.1.2",
-		"@ljharb/eslint-config": "^17.1.0",
-		"aud": "^1.1.2",
-		"es6-shim": "^0.35.5",
-		"eslint": "^7.2.0",
+		"@es-shims/api": "^2.2.3",
+		"@ljharb/eslint-config": "^20.1.0",
+		"aud": "^1.1.5",
+		"es6-shim": "^0.35.6",
+		"eslint": "^8.5.0",
 		"evalmd": "^0.0.19",
-		"functions-have-names": "^1.2.1",
+		"functions-have-names": "^1.2.2",
 		"nyc": "^10.3.2",
-		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.0.1"
+		"safe-publish-latest": "^2.0.0",
+		"tape": "^5.4.0"
 	},
 	"engines": {
 		"node": ">= 0.4"
