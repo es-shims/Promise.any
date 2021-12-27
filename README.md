@@ -1,6 +1,7 @@
 # promise.any <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![Build Status][travis-svg]][travis-url]
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
 [![dependency status][deps-svg]][deps-url]
 [![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
@@ -52,15 +53,17 @@ The `promise.any` package was released as now-deprecated v0.1.0 and v0.1.1, as a
 Thanks to @sadorlovsky for donating the repo and the `promise.any` npm package!
 
 [package-url]: https://npmjs.com/package/promise.any
-[npm-version-svg]: http://versionbadg.es/es-shims/Promise.any.svg
-[travis-svg]: https://travis-ci.org/es-shims/Promise.any.svg
-[travis-url]: https://travis-ci.org/es-shims/Promise.any
+[npm-version-svg]: https://versionbadg.es/es-shims/Promise.any.svg
 [deps-svg]: https://david-dm.org/es-shims/Promise.any.svg
 [deps-url]: https://david-dm.org/es-shims/Promise.any
 [dev-deps-svg]: https://david-dm.org/es-shims/Promise.any/dev-status.svg
 [dev-deps-url]: https://david-dm.org/es-shims/Promise.any#info=devDependencies
 [npm-badge-png]: https://nodei.co/npm/promise.any.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/promise.any.svg
+[license-image]: https://img.shields.io/npm/l/promise.any.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/promise.any.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=promise.any
+[downloads-image]: https://img.shields.io/npm/dm/promise.any.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=promise.any
+[codecov-image]: https://codecov.io/gh/es-shims/Promise.any/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/es-shims/Promise.any/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/es-shims/Promise.any
+[actions-url]: https://github.com/es-shims/Promise.any/actions
