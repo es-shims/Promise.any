@@ -14,10 +14,7 @@ var map = require('array.prototype.map');
 
 var all = callBind(GetIntrinsic('%Promise.all%'));
 var reject = callBind(GetIntrinsic('%Promise.reject%'));
-
-var identity = function (x) {
-	return x;
-};
+var $then = callBind(GetIntrinsic('%Promise.prototype.then%'));
 
 module.exports = function any(iterable) {
 	var C = this;
@@ -28,14 +25,17 @@ module.exports = function any(iterable) {
 		return reject(C, value);
 	};
 	try {
-		return all(C, map(iterate(iterable), function (item) {
-			var itemPromise = PromiseResolve(C, item);
-			return itemPromise.then(thrower, identity);
-		})).then(
+		return $then(
+			all(C, map(iterate(iterable), function (item) {
+				var itemPromise = PromiseResolve(C, item);
+				return itemPromise.then(thrower, function identity(x) {
+					return x;
+				});
+			})),
 			function (errors) {
 				throw new AggregateError(errors, 'Every promise rejected');
 			},
-			identity
+			function (x) { return x; }
 		);
 	} catch (e) {
 		return reject(C, e);
