@@ -8,7 +8,7 @@
 			"url": "http://ljharb.codes"
 		}
 	],
-	"description": "ES Proposal spec-compliant shim for Promise.any",
+	"description": "ES 2021 spec-compliant shim for Promise.any",
 	"main": "index.js",
 	"scripts": {
 		"prepublishOnly": "safe-publish-latest",
