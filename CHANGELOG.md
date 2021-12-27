@@ -1,3 +1,4 @@
+<!-- auto-changelog-above -->
 v2.0.2 / 2020-03-09
 =================
   * [Fix] avoid "Promise.all called on non-object" error
