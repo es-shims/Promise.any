@@ -85,15 +85,14 @@ module.exports = function (any, t) {
 	});
 
 	t.test('poisoned .then', function (st) {
-		st.plan(2);
+		st.plan(1);
 		var poison = new EvalError();
 		var promise = new Promise(function () {});
 		promise.then = function () { throw poison; };
 		any([promise]).then(function () {
 			st.fail('should not reach here');
 		}, function (error) {
-			st.equal(error instanceof AggregateError, true, 'error is an AggregateError');
-			st.deepEqual(error.errors, [poison], 'rejection showed up as expected');
+			st.equal(error, poison, 'error is whatever the poisoned then throws');
 		});
 	});
 

@@ -27,17 +27,17 @@ module.exports = function any(iterable) {
 	var thrower = function (value) {
 		return reject(C, value);
 	};
-	return all(C, map(iterate(iterable), function (item) {
-		var itemPromise = PromiseResolve(C, item);
-		try {
+	try {
+		return all(C, map(iterate(iterable), function (item) {
+			var itemPromise = PromiseResolve(C, item);
 			return itemPromise.then(thrower, identity);
-		} catch (e) {
-			return e;
-		}
-	})).then(
-		function (errors) {
-			throw new AggregateError(errors, 'Every promise rejected');
-		},
-		identity
-	);
+		})).then(
+			function (errors) {
+				throw new AggregateError(errors, 'Every promise rejected');
+			},
+			identity
+		);
+	} catch (e) {
+		return reject(C, e);
+	}
 };
