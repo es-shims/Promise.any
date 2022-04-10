@@ -10,7 +10,6 @@ var bound = callBind(any);
 
 // eslint-disable-next-line no-shadow
 var rebindable = function any(iterable) {
-	// eslint-disable-next-line no-invalid-this
 	return bound(typeof this === 'undefined' ? Promise : this, iterable);
 };
 
