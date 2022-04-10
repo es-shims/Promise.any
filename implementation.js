@@ -5,8 +5,8 @@ var requirePromise = require('./requirePromise');
 requirePromise();
 
 var AggregateError = require('es-aggregate-error/polyfill')();
-var PromiseResolve = require('es-abstract/2020/PromiseResolve');
-var Type = require('es-abstract/2020/Type');
+var PromiseResolve = require('es-abstract/2021/PromiseResolve');
+var Type = require('es-abstract/2021/Type');
 var callBind = require('call-bind');
 var GetIntrinsic = require('get-intrinsic');
 var iterate = require('iterate-value');
