@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.4](https://github.com/es-shims/Promise.any/compare/v2.0.3...v2.0.4) - 2022-04-09
+
+### Commits
+
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`cd92d2c`](https://github.com/es-shims/Promise.any/commit/cd92d2cbdd9b590063f49a24dfaaae34b16ffd47)
+- [Deps] update `es-abstract` [`793eb95`](https://github.com/es-shims/Promise.any/commit/793eb95ac43def5ad44bcf814e83d649cd9e0555)
+
 ## [v2.0.3](https://github.com/es-shims/Promise.any/compare/v2.0.2...v2.0.3) - 2021-12-27
 
 ### Commits
