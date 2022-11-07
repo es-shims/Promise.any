@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.5](https://github.com/es-shims/Promise.any/compare/v2.0.4...v2.0.5) - 2022-11-07
+
+### Commits
+
+- [meta] use `npmignore` to autogenerate an npmignore file [`a05de28`](https://github.com/es-shims/Promise.any/commit/a05de28a21582aac7695299a5bec69540ff0bccd)
+- [Deps] update `array.prototype.map`, `es-abstract`, `es-aggregate-error`, `get-intrinsic` [`fb1a974`](https://github.com/es-shims/Promise.any/commit/fb1a974a9aaa555da72d88764e01d66709dd52a0)
+- [actions] update rebase action to use reusable workflow [`9b62e53`](https://github.com/es-shims/Promise.any/commit/9b62e53eb436363fea9c00d33df50cebd216f978)
+- [Deps] update `define-properties`, `es-abstract`, `es-aggregate-error`, `get-intrinsic` [`cc43f24`](https://github.com/es-shims/Promise.any/commit/cc43f240fc265e160e7f0991f71d75fef5dab000)
+- [Dev Deps] update `aud`, `tape` [`63b55bb`](https://github.com/es-shims/Promise.any/commit/63b55bb2bfd1dd3dbb6fb6fab0e61666067f6cee)
+- [Dev Deps] update `@ljharb/eslint-config`, `functions-have-names` [`d002fd5`](https://github.com/es-shims/Promise.any/commit/d002fd532267ffead2edac8354d6a967e0042354)
+
 ## [v2.0.4](https://github.com/es-shims/Promise.any/compare/v2.0.3...v2.0.4) - 2022-04-09
 
 ### Commits
